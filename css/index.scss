@@ -5,6 +5,13 @@
   --yellow-color: #ffc400;
   --section-color: #eff7fa;
 }
+@import "./var.scss";
+* {
+  box-sizing: border-box;
+  padding: 0px;
+  margin: 0px;
+}
+
 body {
   font-family: "Roboto", sans-serif;
 }
@@ -12,4 +19,129 @@ body {
   background-color: var(--red-color);
   color: var(--yellow-color);
   padding: 0.5rem 1rem;
+  &:hover {
+    color: var(--yellow-color);
+  }
 }
+// component
+
+.main-title {
+  text-align: center;
+  margin: 25px 0px;
+}
+.fromRight {
+  position: relative;
+  left: 195px;
+  opacity: 0;
+  transition: 0.5s;
+}
+.fromLeft {
+  position: relative;
+  right: 195px;
+  opacity: 0;
+  transition: 0.5s;
+}
+.fromTop {
+  position: relative;
+  bottom: 195px;
+  opacity: 0;
+  transition: 0.5s;
+}
+.fromBottom {
+  position: relative;
+  top: 195px;
+  opacity: 0;
+  transition: 0.5s;
+}
+//
+// nav
+.myNav {
+  min-height: 75px;
+  background-color: var(--dark-color);
+
+  .myIcon {
+    border-left: 1px solid var(--green-color);
+  }
+  // image.style.marginBottom = "0";
+  //   myList.style.pointerEvents = "auto";
+  //   myList.style.opacity = "1";
+  .image {
+    transition: 0.5s linear;
+    @include media("mobile") {
+      margin-bottom: -264px;
+    }
+    @include media("minSmall") {
+      margin-bottom: 0px !important;
+    }
+    .myClick {
+      cursor: pointer;
+      padding: 5px 10px;
+      border: white 1px solid;
+      border-radius: 8px;
+    }
+  }
+  .myList {
+    transition: 0.5s linear;
+    ul {
+      li {
+        a {
+          transition: 0.3s;
+          color: #fff;
+          font-size: 20px;
+          &.active,
+          &:hover {
+            color: var(--green-color);
+          }
+        }
+        &:not(:last-child) {
+          @include media("mobile") {
+            border-bottom: 1px solid white;
+          }
+        }
+      }
+    }
+    > a {
+      padding: 0.5rem 1.3rem;
+      &:hover {
+        color: var(--yellow-color);
+      }
+    }
+    @include media("mobile") {
+      pointer-events: none;
+      opacity: 0;
+    }
+    @include media("minSmall") {
+      pointer-events: auto !important;
+      opacity: 1 !important;
+    }
+  }
+}
+// start Home
+.home {
+  background-color: var(--dark-color);
+  height: calc(100vh - 75px);
+
+  color: white;
+}
+// end Home
+// start services
+.services {
+  .icons {
+    height: 200px;
+    width: 100%;
+    .myNumber {
+      color: var(--section-color);
+      font-size: 15rem;
+    }
+    .mySympol {
+      top: 67%;
+      color: var(--green-color);
+    }
+  }
+  .row {
+    h4 {
+      color: var(--yellow-color);
+    }
+  }
+}
+// end services

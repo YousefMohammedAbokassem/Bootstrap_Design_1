@@ -1,0 +1,142 @@
+:root {
+  --dark-color: #19283f;
+  --green-color: #33d1cc;
+  --red-color: #ff3150;
+  --yellow-color: #ffc400;
+  --section-color: #eff7fa;
+}
+
+* {
+  box-sizing: border-box;
+  padding: 0px;
+  margin: 0px;
+}
+
+body {
+  font-family: "Roboto", sans-serif;
+}
+
+.main-btn {
+  background-color: var(--red-color);
+  color: var(--yellow-color);
+  padding: 0.5rem 1rem;
+}
+.main-btn:hover {
+  color: var(--yellow-color);
+}
+
+.main-title {
+  text-align: center;
+  margin: 25px 0px;
+}
+
+.fromRight {
+  position: relative;
+  left: 195px;
+  opacity: 0;
+  transition: 0.5s;
+}
+
+.fromLeft {
+  position: relative;
+  right: 195px;
+  opacity: 0;
+  transition: 0.5s;
+}
+
+.fromTop {
+  position: relative;
+  bottom: 195px;
+  opacity: 0;
+  transition: 0.5s;
+}
+
+.fromBottom {
+  position: relative;
+  top: 195px;
+  opacity: 0;
+  transition: 0.5s;
+}
+
+.myNav {
+  min-height: 75px;
+  background-color: var(--dark-color);
+}
+.myNav .myIcon {
+  border-left: 1px solid var(--green-color);
+}
+.myNav .image {
+  transition: 0.5s linear;
+}
+@media (max-width:767px) {
+  .myNav .image {
+    margin-bottom: -264px;
+  }
+}
+@media (min-width:768px) {
+  .myNav .image {
+    margin-bottom: 0px !important;
+  }
+}
+.myNav .image .myClick {
+  cursor: pointer;
+  padding: 5px 10px;
+  border: white 1px solid;
+  border-radius: 8px;
+}
+.myNav .myList {
+  transition: 0.5s linear;
+}
+.myNav .myList ul li a {
+  transition: 0.3s;
+  color: #fff;
+  font-size: 20px;
+}
+.myNav .myList ul li a.active, .myNav .myList ul li a:hover {
+  color: var(--green-color);
+}
+@media (max-width:767px) {
+  .myNav .myList ul li:not(:last-child) {
+    border-bottom: 1px solid white;
+  }
+}
+.myNav .myList > a {
+  padding: 0.5rem 1.3rem;
+}
+.myNav .myList > a:hover {
+  color: var(--yellow-color);
+}
+@media (max-width:767px) {
+  .myNav .myList {
+    pointer-events: none;
+    opacity: 0;
+  }
+}
+@media (min-width:768px) {
+  .myNav .myList {
+    pointer-events: auto !important;
+    opacity: 1 !important;
+  }
+}
+
+.home {
+  background-color: var(--dark-color);
+  height: calc(100vh - 75px);
+  color: white;
+}
+
+.services .icons {
+  height: 200px;
+  width: 100%;
+}
+.services .icons .myNumber {
+  color: var(--section-color);
+  font-size: 15rem;
+}
+.services .icons .mySympol {
+  top: 67%;
+  color: var(--green-color);
+}
+.services .row h4 {
+  color: var(--yellow-color);
+}/*# sourceMappingURL=index.css.map */
