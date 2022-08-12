@@ -6,12 +6,35 @@ const icon = document.getElementById("myClick"),
   navLis = document.querySelectorAll(".myList ul li"),
   home = document.getElementById("Home"),
   services = document.getElementById("Services"),
-  portfolio = document.getElementById("Portfolio");
-
+  portfolio = document.getElementById("Portfolio"),
+  myPointer = document.querySelector(".myPointer"),
+  myLargePointer = document.querySelector(".myLargePointer");
+//my pointer
+navLis[0].addEventListener("click", () => {
+  myPointer.style.cssText = "left:5px; width:59px;";
+  myLargePointer.style.cssText = "left:13px; width:59px;";
+});
+navLis[1].addEventListener("click", () => {
+  myPointer.style.cssText = "left:80px; width:82px;";
+  myLargePointer.style.cssText = "left:103px; width:82px;";
+});
+navLis[2].addEventListener("click", () => {
+  myPointer.style.cssText = "left:177px; width:82px;";
+  myLargePointer.style.cssText = "left:217px; width:82px;";
+});
+navLis[3].addEventListener("click", () => {
+  myPointer.style.cssText = "left:275px; width:60px;";
+  myLargePointer.style.cssText = "left:332px; width:60px;";
+});
+navLis[4].addEventListener("click", () => {
+  myPointer.style.cssText = "left:351px; width:73px;";
+  myLargePointer.style.cssText = "left:424px; width:73px;";
+});
+// end my pointer
 let toggle = false;
 icon.addEventListener("click", () => {
   if (toggle) {
-    image.style.marginBottom = "-264px ";
+    image.style.marginBottom = "-345px ";
     myList.style.pointerEvents = "none";
     myList.style.opacity = "0";
     toggle = !toggle;
@@ -22,6 +45,16 @@ icon.addEventListener("click", () => {
     toggle = !toggle;
   }
 });
+//
+navLis.forEach((li) => {
+  li.addEventListener("click", (ele) => {
+    navLis.forEach((item) => {
+      item.classList.remove("padd");
+    });
+    li.classList.add("padd");
+  });
+});
+// aaa
 myLinks.forEach((link) => {
   link.addEventListener("click", (e) => {
     myLinks.forEach((link) => {
@@ -30,17 +63,7 @@ myLinks.forEach((link) => {
     e.target.classList.add("active");
   });
 });
-navLis.forEach((li) => {
-  li.addEventListener("click", (e) => {
-    myLinks.forEach((li) => {
-      li.style.cssText = "border:none;";
-    });
-    if (e.target[navLis]) {
-      return false;
-    }
-    e.target.style.cssText = "border-bottom:1px solid #33d1cc";
-  });
-});
+
 // end Nav
 // start portfolio
 const lis = document.querySelectorAll(".portfolio ul li"),
@@ -129,9 +152,9 @@ window.onscroll = function () {
   });
   fromBottom.forEach((item) => {
     if (scrollY > item.offsetTop - 500) {
-      item.style.cssText = "    top: 0px;opacity: 1;";
+      item.style.cssText = "top: 0px;opacity: 1;";
     } else {
-      item.style.cssText = "    top: 100px;opacity: 0;";
+      item.style.cssText = "top: 100px;opacity: 0;";
     }
   });
   if (scrollY < home.offsetTop) {
@@ -139,16 +162,35 @@ window.onscroll = function () {
       a.classList.remove("active");
       myLinks[0].classList.add("active");
     });
+    navLis.forEach((li) => {
+      li.classList.remove("padd");
+      navLis[0].classList.add("padd");
+    });
+    myPointer.style.cssText = "left:5px; width:59px;";
+    myLargePointer.style.cssText = "left:13px; width:59px;";
   } else if (scrollY >= services.offsetTop && scrollY < portfolio.offsetTop) {
     myLinks.forEach((a) => {
       a.classList.remove("active");
       myLinks[1].classList.add("active");
     });
+    navLis.forEach((li) => {
+      li.classList.remove("padd");
+      navLis[1].classList.add("padd");
+    });
+    myPointer.style.cssText = "left:80px;  width:82px;";
+    myLargePointer.style.cssText = "left:103px; width:82px;";
   } else if (scrollY >= portfolio.offsetTop) {
     myLinks.forEach((a) => {
       a.classList.remove("active");
       myLinks[2].classList.add("active");
     });
+    navLis.forEach((li) => {
+      li.classList.remove("padd");
+      navLis[2].classList.add("padd");
+    });
+    myPointer.style.cssText = "left:177px;  width:82px;";
+    myLargePointer.style.cssText = "left:217px; width:82px;";
   }
 };
 // end services
+console.log(scrollY);

@@ -79,12 +79,40 @@ body {
 .myNav .myIcon {
   border-left: 1px solid var(--green-color);
 }
+.myNav .myPointer {
+  width: 59px;
+  height: 2.5px;
+  bottom: 13px;
+  left: 5px;
+  transition: 0.5s;
+  background-color: var(--green-color);
+  opacity: 0;
+}
+@media (max-width:991px) {
+  .myNav .myPointer {
+    opacity: 1;
+  }
+}
+.myNav .myLargePointer {
+  width: 59px;
+  height: 2.5px;
+  bottom: 13px;
+  left: 13px;
+  transition: 0.5s;
+  background-color: var(--green-color);
+  opacity: 1;
+}
+@media (max-width:991px) {
+  .myNav .myLargePointer {
+    opacity: 0;
+  }
+}
 .myNav .image {
   transition: 0.5s linear;
 }
 @media (max-width:767px) {
   .myNav .image {
-    margin-bottom: -264px;
+    margin-bottom: -345px;
   }
 }
 @media (min-width:768px) {
@@ -101,33 +129,27 @@ body {
 .myNav .myList {
   transition: 0.5s linear;
 }
+.myNav .myList ul li {
+  transition: 0.3s;
+}
 .myNav .myList ul li a {
   transition: 0.3s;
   color: #fff;
   font-size: 20px;
+  display: block;
   position: relative;
 }
 .myNav .myList ul li a.active, .myNav .myList ul li a:hover {
   color: var(--green-color);
 }
-.myNav .myList ul li a.active::before {
-  content: "";
-  left: 0px;
-  bottom: 0px;
-  position: absolute;
-  background-color: var(--green-color);
-  width: 100%;
-  height: 2px;
-  transition: 0.5s;
-}
-@media (max-width:767px) {
-  .myNav .myList ul li a.active::before {
-    display: none;
-  }
-}
 @media (max-width:767px) {
   .myNav .myList ul li:not(:last-child) {
     border-bottom: 1px solid white;
+  }
+}
+@media (max-width:767px) {
+  .myNav .myList ul li.padd, .myNav .myList ul li:hover {
+    padding-left: 15px !important;
   }
 }
 .myNav .myList > a {
@@ -195,6 +217,7 @@ body {
   position: relative;
   overflow: hidden;
   border-radius: 2.2rem;
+  cursor: pointer;
   box-shadow: 0px 12px 20px 0px rgba(0, 0, 0, 0.13), 0px 2px 4px 0px rgba(0, 0, 0, 0.12);
 }
 .portfolio .row .image img {
