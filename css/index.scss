@@ -116,26 +116,22 @@ body {
   }
 }
 .fromRight {
-  position: relative;
   left: 195px;
-  opacity: 0;
-  transition: 0.5s;
 }
 .fromLeft {
-  position: relative;
   right: 195px;
-  opacity: 0;
-  transition: 0.5s;
 }
 .fromTop {
-  position: relative;
   bottom: 195px;
-  opacity: 0;
-  transition: 0.5s;
 }
 .fromBottom {
-  position: relative;
   top: 195px;
+}
+.fromBottom,
+.fromLeft,
+.fromRight,
+.fromTop {
+  position: relative;
   opacity: 0;
   transition: 0.5s;
 }
@@ -351,13 +347,15 @@ body {
   p {
     padding: 10px;
   }
-  .info{
+  .info {
     background-color: var(--mix-section);
-    h4{
+    h4 {
       background-color: var(--icons-color) !important;
       color: var(--theme-text) !important;
     }
   }
-
 }
 // end about2
+#about3 {
+  overflow-x: hidden;
+}
