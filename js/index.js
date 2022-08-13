@@ -7,8 +7,116 @@ const icon = document.getElementById("myClick"),
   home = document.getElementById("Home"),
   services = document.getElementById("Services"),
   portfolio = document.getElementById("Portfolio"),
+  about = document.getElementById("About"),
+  contact = document.getElementById("Contact"),
   myPointer = document.querySelector(".myPointer"),
-  myLargePointer = document.querySelector(".myLargePointer");
+  myLargePointer = document.querySelector(".myLargePointer"),
+  option = document.querySelector(".option"),
+  show = document.querySelector(".option .show"),
+  spans = document.querySelectorAll(".option .colors span"),
+  goUp = document.getElementById("goUp");
+// go up
+goUp.addEventListener("click", () => {
+  window.scrollTo({
+    left: "0px",
+    top: "0px",
+    behavior: "smooth",
+  });
+});
+// go up
+// option
+let optionToggle = true;
+show.addEventListener("click", (e) => {
+  if (optionToggle) {
+    option.style.left = "0px";
+    optionToggle = !optionToggle;
+    show.innerHTML = "hide";
+  } else {
+    option.style.left = "-25%";
+    optionToggle = !optionToggle;
+    show.innerHTML = "show";
+  }
+});
+// loacal storage
+let localItem = localStorage.getItem("color1");
+if (localItem !== null) {
+  document.documentElement.style.setProperty(
+    "--dark-color",
+    localStorage.getItem("color1")
+  );
+  document.documentElement.style.setProperty(
+    "--icons-color",
+    localStorage.getItem("color2")
+  );
+  document.documentElement.style.setProperty(
+    "--roundedLink-color",
+    localStorage.getItem("color3")
+  );
+  document.documentElement.style.setProperty(
+    "--linkText-color",
+    localStorage.getItem("color4")
+  );
+  document.documentElement.style.setProperty(
+    "--section-color",
+    localStorage.getItem("color5")
+  );
+  document.documentElement.style.setProperty(
+    "--theme-text",
+    localStorage.getItem("color6")
+  );
+  document.documentElement.style.setProperty(
+    "--mix-section",
+    localStorage.getItem("color7")
+  );
+}
+spans.forEach((span) => {
+  span.addEventListener("click", (e) => {
+    spans.forEach((span) => {
+      span.classList.remove("spanActive");
+    });
+    // set item
+    localStorage.setItem("color1", e.target.dataset.color1);
+    localStorage.setItem("color2", e.target.dataset.color2);
+    localStorage.setItem("color3", e.target.dataset.color3);
+    localStorage.setItem("color4", e.target.dataset.color4);
+    localStorage.setItem("color5", e.target.dataset.color5);
+    localStorage.setItem("color6", e.target.dataset.color6);
+    localStorage.setItem("color7", e.target.dataset.color7);
+    // set item
+    e.target.classList.add("spanActive");
+    //
+    document.documentElement.style.setProperty(
+      "--dark-color",
+      e.target.dataset.color1
+    );
+    document.documentElement.style.setProperty(
+      "--icons-color",
+      e.target.dataset.color2
+    );
+    document.documentElement.style.setProperty(
+      "--roundedLink-color",
+      e.target.dataset.color3
+    );
+    document.documentElement.style.setProperty(
+      "--linkText-color",
+      e.target.dataset.color4
+    );
+    document.documentElement.style.setProperty(
+      "--section-color",
+      e.target.dataset.color5
+    );
+    document.documentElement.style.setProperty(
+      "--theme-text",
+      e.target.dataset.color6
+    );
+    document.documentElement.style.setProperty(
+      "--mix-section",
+      e.target.dataset.color7
+    );
+  });
+});
+// end option
+
 //my pointer
 navLis[0].addEventListener("click", () => {
   myPointer.style.cssText = "left:5px; width:59px;";
@@ -157,6 +265,11 @@ window.onscroll = function () {
       item.style.cssText = "top: 100px;opacity: 0;";
     }
   });
+  if (window.scrollY > 200) {
+    goUp.style.cssText = "opacity:1; bottom:62px;";
+  } else {
+    goUp.style.cssText = "opacity:0; bottom:42px;";
+  }
   if (scrollY < home.offsetTop) {
     myLinks.forEach((a) => {
       a.classList.remove("active");
@@ -179,7 +292,7 @@ window.onscroll = function () {
     });
     myPointer.style.cssText = "left:80px;  width:82px;";
     myLargePointer.style.cssText = "left:103px; width:82px;";
-  } else if (scrollY >= portfolio.offsetTop) {
+  } else if (scrollY >= portfolio.offsetTop && scrollY < about.offsetTop) {
     myLinks.forEach((a) => {
       a.classList.remove("active");
       myLinks[2].classList.add("active");
@@ -190,7 +303,35 @@ window.onscroll = function () {
     });
     myPointer.style.cssText = "left:177px;  width:82px;";
     myLargePointer.style.cssText = "left:217px; width:82px;";
+  } else if (scrollY >= about.offsetTop) {
+    myLinks.forEach((a) => {
+      a.classList.remove("active");
+      myLinks[3].classList.add("active");
+    });
+    navLis.forEach((li) => {
+      li.classList.remove("padd");
+      navLis[3].classList.add("padd");
+    });
+    myPointer.style.cssText = "left:275px; width:60px;";
+    myLargePointer.style.cssText = "left:332px; width:60px;";
   }
 };
+
 // end services
-console.log(scrollY);
+
+// tilt
+VanillaTilt.init(document.querySelectorAll(".tilt"), {
+  max: 25,
+  speed: 2000,
+});
+VanillaTilt.init(document.querySelectorAll(".tiltG"), {
+  max: 25,
+  speed: 600,
+  glare: true,
+  "max-glare": 0.5,
+});
+VanillaTilt.init(document.querySelectorAll(".glare"), {
+  max: 0,
+  glare: true,
+  "max-glare": 0.25,
+});

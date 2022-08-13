@@ -10,6 +10,59 @@
     <link rel="stylesheet" href="./css/index.css" />
   </head>
   <body>
+    <span
+      id="goUp"
+      class="text-uppercase position-fixed d-flex justify-content-center align-content-center rounded-circle"
+      >up</span
+    >
+    <div class="position-absolute h-100 bg-dark w-25 option">
+      <div class="colors">
+        <div class="text-center mt-1 fs-5 text-white-50">colors</div>
+        <div class="d-flex align-content-center justify-content-evenly mt-3">
+          <span
+            class="rounded-circle"
+            data-color1="#111"
+            data-color2="#d4d1d1eb"
+            data-color3="#ddd"
+            data-color4="#333"
+            data-color5="#000000db"
+            data-color6="#fff"
+            data-color7="#6f6f6f"
+          ></span>
+          <!--  1 => main section
+                2 => icons before hover
+                3 => link =roundedLink
+                4 => link text && h4
+                5 => section second color
+                6 => text color
+                7 => transparent 
+          -->
+          <span
+            data-color1="#19283f"
+            data-color2="#33d1cc"
+            data-color3="#ff3150"
+            data-color4="#ffc400"
+            data-color5="#eff7fa"
+            data-color6="#000"
+            data-color7="transparent"
+            class="default rounded-circle"
+          ></span>
+          <!--  -->
+          <span
+            class="rounded-circle"
+            data-color1="#c1c1c133"
+            data-color2="#03a9f4"
+            data-color3="#03a9f4"
+            data-color4="#5c5c5cf0"
+            data-color5="#ddd"
+            data-color6="#111"
+            data-color7="#ffffff"
+          >
+          </span>
+        </div>
+      </div>
+      <span class="position-absolute show text-uppercase">show</span>
+    </div>
     <!-- start nav  -->
     <nav class="container-fluid myNav sticky-top py-3">
       <div
@@ -59,7 +112,7 @@
           </ul>
           <div class="myIcon px-2">
             <i
-              class="fa-solid fa-magnifying-glass text-white d-md-block d-none"
+              class="fa-solid search fa-magnifying-glass text-white d-md-block d-none"
             ></i>
           </div>
           <a href="#" class="btn main-btn rounded-pill">Login</a>
@@ -74,9 +127,7 @@
       class="home w-100 d-flex justify-content-center align-items-center flex-column container-fluid text-center"
     >
       <h1 class="fw-bold">Taste the Creativity</h1>
-      <div class="text-white-50 mt-2 mb-5">
-        We make awesome graphic and web design
-      </div>
+      <div class="mt-2 mb-5">We make awesome graphic and web design</div>
       <a class="main-btn btn rounded-pill">Get Started</a>
     </div>
     <!-- end section -->
@@ -85,7 +136,7 @@
       <div class="main-title fromTop">
         <img src="./imgs/title.png" alt="...no image to show" />
         <h2 class="my-3">We are Good at</h2>
-        <p class="text-black-50 text-uppercase">Some Of These Stuff Under</p>
+        <p class="text-uppercase">Some Of These Stuff Under</p>
       </div>
       <div class="row">
         <div class="col-lg-4 col-md-6 col-sm-12 fromLeft">
@@ -99,7 +150,7 @@
               ></i>
             </div>
             <h4 class="text-uppercase fw-bold my-3">graphic design</h4>
-            <p class="text-black-50">
+            <p class="text-capitalize">
               Pellentesque in ipsum id orci porta dapibus. Vivamus magna justo,
               lacinia eget consectetur sed, convallis at tellus.
             </p>
@@ -114,7 +165,7 @@
               <i class="fa-solid fa-tv fa-4x position-absolute mySympol"></i>
             </div>
             <h4 class="text-uppercase fw-bold my-3">graphic design</h4>
-            <p class="text-black-50">
+            <p class="text-capitalize">
               Pellentesque in ipsum id orci porta dapibus. Vivamus magna justo,
               lacinia eget consectetur sed, convallis at tellus.
             </p>
@@ -129,7 +180,7 @@
               <i class="fa-solid fa-plug fa-4x position-absolute mySympol"></i>
             </div>
             <h4 class="text-uppercase fw-bold my-3">graphic design</h4>
-            <p class="text-black-50">
+            <p class="text-capitalize">
               Pellentesque in ipsum id orci porta dapibus. Vivamus magna justo,
               lacinia eget consectetur sed, convallis at tellus.
             </p>
@@ -143,7 +194,7 @@
       <div class="main-title fromTo">
         <img src="./imgs/title.png" alt="...no image to show" />
         <h2 class="my-3">We Make This</h2>
-        <p class="text-black-50 text-uppercase">Prepare To Be Amazed</p>
+        <p class="text-uppercase">Prepare To Be Amazed</p>
       </div>
       <ul
         class="d-flex justify-content-center align-items-center list-unstyled"
@@ -154,58 +205,231 @@
         <li class="photo">Photo</li>
         <li class="app">App</li>
       </ul>
-      <div class="row mx-1 fromLeft">
-        <div class="col-lg-3 col-md-4 col-sm-6 mb-3 design all">
+      <div class="row mx-1 mb-4 fromLeft">
+        <div class="col-lg-3 col-md-4 col-sm-6 mb-3 design all tilt">
           <div class="image">
             <img src="./imgs/work-02.jpg" alt="...no image to show" />
           </div>
         </div>
         <!--  -->
-        <div class="col-lg-3 col-md-4 col-sm-6 design all">
+        <div class="col-lg-3 col-md-4 col-sm-6 design all tilt">
           <div class="image">
             <img src="./imgs/work-02.jpg" alt="...no image to show" />
           </div>
         </div>
         <!--  -->
-        <div class="col-lg-3 col-md-4 col-sm-6 mb-3 code all">
+        <div class="col-lg-3 col-md-4 col-sm-6 mb-3 code all tilt">
           <div class="image">
             <img src="./imgs/work-03.jpg" alt="...no image to show" />
           </div>
         </div>
         <!--  -->
-        <div class="col-lg-3 col-md-4 col-sm-6 photo all">
+        <div class="col-lg-3 col-md-4 col-sm-6 photo all tilt">
           <div class="image">
             <img src="./imgs/work-04.jpg" alt="...no image to show" />
           </div>
         </div>
         <!--  -->
-        <div class="col-lg-3 col-md-4 col-sm-6 mb-3 code all">
+        <div class="col-lg-3 col-md-4 col-sm-6 mb-3 code all tilt">
           <div class="image">
             <img src="./imgs/work-05.jpg" alt="...no image to show" />
           </div>
         </div>
         <!--  -->
-        <div class="col-lg-3 col-md-4 col-sm-6 mb-3 photo all">
+        <div class="col-lg-3 col-md-4 col-sm-6 mb-3 photo all tilt">
           <div class="image">
             <img src="./imgs/work-06.jpg" alt="...no image to show" />
           </div>
         </div>
         <!--  -->
-        <div class="col-lg-3 col-md-4 col-sm-6 mb-3 app all">
+        <div class="col-lg-3 col-md-4 col-sm-6 mb-3 app all tilt">
           <div class="image">
             <img src="./imgs/work-07.jpg" alt="...no image to show" />
           </div>
         </div>
         <!--  -->
-        <div class="col-lg-3 col-md-4 col-sm-6 mb-3 app all">
+        <div class="col-lg-3 col-md-4 col-sm-6 mb-3 app all tilt">
           <div class="image">
             <img src="./imgs/work-08.jpg" alt="...no image to show" />
           </div>
         </div>
         <!--  -->
       </div>
+      <a class="btn main-btn text-uppercase rounded-pill my-2 d-block mx-auto">
+        i want more</a
+      >
     </div>
     <!-- end Portfolio -->
+    <!-- start about  -->
+    <div id="About" class="py-5 container-fluid">
+      <div class="main-title fromLeft">
+        <img src="./imgs/title.png" alt="...no image to show" />
+        <h2 class="my-3">Some Stuff About Us</h2>
+        <p class="text-uppercase">the great team</p>
+      </div>
+      <p class="text-center container py-3">
+        Donec rutrum congue leo eget malesuada. Mauris blandit aliquet elit,
+        eget tincidunt nibh pulvinar a. Pellentesque in ipsum id orci porta
+        dapibus. Proin eget tortor risus. Donec sollicitudin molestie malesuada.
+      </p>
+      <div class="row text-md-start text-center p-5">
+        <div class="info col-lg-4 my-4 my-md-0">
+          <h4 class="">Retina Design</h4>
+          <p class="text-capitalize my-3">
+            Vestibulum ac diam sit amet quam vehicula elementum sed sit amet
+            dui. Mauris blandit aliquet elit, eget tincidunt nibh pulvinar a.
+          </p>
+          <p class="text-capitalize">
+            Donec rutrum congue leo eget malesuada. Mauris blandit aliquet elit,
+            eget tincidunt nibh pulvinar a. Pellentesque in ipsum id orci porta
+            dapibus. Proin eget tortor risus. Donec sollicitudin molestie
+            malesuada.
+          </p>
+          <a href="#" class="btn main-btn rounded-pill m-md-0 m-3"
+            >order me one</a
+          >
+        </div>
+        <div
+          class="image col-lg-8 img-fluid d-flex align-items-center justify-content-center"
+        >
+          <img
+            src="./imgs/laptop.png"
+            alt=" ..no image to show "
+            class="img-fluid"
+          />
+        </div>
+      </div>
+    </div>
+    <!-- end about1  -->
+    <!-- start about2 -->
+    <div class="about2 py-5">
+      <div class="container text-center">
+        <h2 class="text-capitalize">meet mhe meam</h2>
+        <p class="text-capitalize mb-4">
+          Donec rutrum congue leo eget malesuada. Mauris blandit aliquet elit,
+          eget tincidunt nibh pulvinar a. Pellentesque in ipsum id orci porta
+          dapibus. Proin eget tortor risus. Donec sollicitudin molestie
+          malesuada.
+        </p>
+        <div class="row">
+          <div class="p-2 col-lg-3 col-md-6 tilt">
+            <div class="info">
+              <div class="image">
+                <img
+                  src="./imgs/team-2.png"
+                  class="img-fluid w-100"
+                  alt="..no image to show"
+                />
+              </div>
+              <h4 class="p-3">Luke Skywalker</h4>
+              <p class="">
+                "I don't understand how we got by those troops. I thought we
+                were dead."
+              </p>
+            </div>
+          </div>
+          <div class="p-2 col-lg-3 col-md-6 tilt">
+            <div class="info">
+              <div class="image">
+                <img
+                  src="./imgs/team-3.png"
+                  class="img-fluid w-100"
+                  alt="..no image to show"
+                />
+              </div>
+              <h4 class="p-3">Luke Skywalker</h4>
+              <p class="">
+                "I don't understand how we got by those troops. I thought we
+                were dead."
+              </p>
+            </div>
+          </div>
+          <div class="p-2 col-lg-3 col-md-6 tilt">
+            <div class="info">
+              <div class="image">
+                <img
+                  src="./imgs/team-2.png"
+                  class="img-fluid w-100"
+                  alt="..no image to show"
+                />
+              </div>
+              <h4 class="p-3">Luke Skywalker</h4>
+              <p class="">
+                "I don't understand how we got by those troops. I thought we
+                were dead."
+              </p>
+            </div>
+          </div>
+          <div class="p-2 col-lg-3 col-md-6 tilt" >
+            <div class="info">
+              <div class="image">
+                <img
+                  src="./imgs/team-4.png"
+                  class="img-fluid w-100 "
+                  alt="..no image to show"
+                />
+              </div>
+              <h4 class="p-3">Luke Skywalker</h4>
+              <p class="">
+                "I don't understand how we got by those troops. I thought we
+                were dead."
+              </p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <!-- end about2  -->
+    <!-- about3 start  -->
+    <div id="about3" style="background-color: var(--mix-section)" class="py-5">
+      <div class="row text-center">
+        <div class="col-sm-6 col-md-4 col-lg-2 my-2 fromLeft">
+          <img
+            src="./imgs/tech-1.png"
+            alt="...no image to show"
+            class="img-fluid"
+          />
+        </div>
+        <div class="col-sm-6 col-md-4 col-lg-2 my-2 fromLeft">
+          <img
+            src="./imgs/tech-2.png"
+            alt="...no image to show"
+            class="img-fluid"
+          />
+        </div>
+        <div class="col-sm-6 col-md-4 col-lg-2 my-2 fromLeft">
+          <img
+            src="./imgs/tech-3.png"
+            alt="...no image to show"
+            class="img-fluid"
+          />
+        </div>
+        <div class="col-sm-6 col-md-4 col-lg-2 my-2 fromRight">
+          <img
+            src="./imgs/tech-1.png"
+            alt="...no image to show"
+            class="img-fluid"
+          />
+        </div>
+        <div class="col-sm-6 col-md-4 col-lg-2 my-2 fromRight">
+          <img
+            src="./imgs/tech-4.png"
+            alt="...no image to show"
+            class="img-fluid"
+          />
+        </div>
+        <div class="col-sm-6 col-md-4 col-lg-2 my-2 fromRight">
+          <img
+            src="./imgs/tech-3.png"
+            alt="...no image to show"
+            class="img-fluid"
+          />
+        </div>
+      </div>
+    </div>
+    <!-- about3 end  -->
+
+    <script src="./js/tilt.js"></script>
     <script src="./js/all.min.js"></script>
     <script src="./js/bootstrap.bundle.min.js"></script>
     <script src="./js/index.js"></script>

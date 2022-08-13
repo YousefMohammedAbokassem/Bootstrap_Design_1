@@ -28,6 +28,15 @@
 // background-image: linear-gradient(to top, #09203f 0%, #537895 100%);
 
 // background-image: linear-gradient(to right, #243949 0%, #517fa4 100%);
+:root {
+  --dark-color: #19283f;
+  --icons-color: #33d1cc;
+  --roundedLink-color: #ff3150;
+  --linkText-color: #ffc400;
+  --section-color: #eff7fa;
+  --theme-text: #fff;
+  --mix-section: #fff;
+}
 //  media queries
 $max-mobile: "max-width:767px";
 $min-mobile: "min-width:768px";
