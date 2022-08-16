@@ -5,7 +5,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>myBondi</title>
-    <link rel="stylesheet" href="./css/all.min.css" />
+    <!-- <link rel="stylesheet" href="./css/all.min.css" /> -->
     <link rel="stylesheet" href="./css/bootstrap.min.css" />
     <link rel="stylesheet" href="./css/index.css" />
   </head>
@@ -15,7 +15,7 @@
       class="text-uppercase position-fixed d-flex justify-content-center align-content-center rounded-circle"
       >up</span
     >
-    <div class="position-absolute h-100 bg-dark w-25 option">
+    <div class="position-absolute h-100 bg-dark w-sm-50 w-25 option">
       <div class="colors">
         <div class="text-center mt-1 fs-5 text-white-50">colors</div>
         <div class="d-flex align-content-center justify-content-evenly mt-3">
@@ -34,7 +34,7 @@
                 3 => link =roundedLink
                 4 => link text && h4
                 5 => section second color
-                6 => text color
+                6 => text color theme color
                 7 => transparent 
           -->
           <span
@@ -43,7 +43,7 @@
             data-color3="#ff3150"
             data-color4="#ffc400"
             data-color5="#eff7fa"
-            data-color6="#000"
+            data-color6="#aaa"
             data-color7="transparent"
             class="default rounded-circle"
           ></span>
@@ -279,18 +279,18 @@
             Vestibulum ac diam sit amet quam vehicula elementum sed sit amet
             dui. Mauris blandit aliquet elit, eget tincidunt nibh pulvinar a.
           </p>
-          <p class="text-capitalize">
+          <p class="text-capitalize mb-2">
             Donec rutrum congue leo eget malesuada. Mauris blandit aliquet elit,
             eget tincidunt nibh pulvinar a. Pellentesque in ipsum id orci porta
             dapibus. Proin eget tortor risus. Donec sollicitudin molestie
             malesuada.
           </p>
-          <a href="#" class="btn main-btn rounded-pill m-md-0 m-3"
+          <a href="#" class="btn main-btn rounded-pill m-md-0 "
             >order me one</a
           >
         </div>
         <div
-          class="image col-lg-8 img-fluid d-flex align-items-center justify-content-center"
+          class="image col-lg-8 img-fluid d-flex align-items-center justify-content-center mt-2"
         >
           <img
             src="./imgs/laptop.png"
@@ -428,7 +428,181 @@
       </div>
     </div>
     <!-- about3 end  -->
-
+    <!-- about4 start  -->
+    <div id="about4" class="text-center py-5">
+      <div class="info text-center">
+        <h2>Start Your Project Now</h2>
+        <p>
+          Leave your description and we start the engine.Don't worry,you can
+          cancel anytime
+        </p>
+        <a href="#" class="btn main-btn rounded-pill my-3">start project</a>
+      </div>
+    </div>
+    <!-- about4 end  -->
+    <!-- start about5 -->
+    <div class="about5 py-5 container-fluid">
+      <div class="main-title fromTop">
+        <img src="./imgs/title.png" alt="...no image to show" />
+        <h2 class="my-3">Read Our Blog</h2>
+        <p class="text-uppercase">NEW STORIES</p>
+      </div>
+      <div class="row container m-auto">
+        <div class="col-md-6 col-lg-4 fromLeft">
+          <div class="card my-2">
+            <div class="image">
+              <img
+                class="img-fluid"
+                src="./imgs/blog-1.jpg"
+                alt="...no image to show"
+              />
+            </div>
+            <span>Jan 17, 2022</span>
+            <p>Some Awesome Blog Title Here</p>
+          </div>
+        </div>
+        <div class="col-md-6 col-lg-4 fromBottom">
+          <div class="card my-2">
+            <div class="image">
+              <img
+                class="img-fluid"
+                src="./imgs/blog-2.jpg"
+                alt="...no image to show"
+              />
+            </div>
+            <span>Jan 17, 2022</span>
+            <p>Some Awesome Blog Title Here</p>
+          </div>
+        </div>
+        <div class="col-md-6 col-lg-4 fromRight">
+          <div class="card my-2">
+            <div class="image">
+              <img
+                class="img-fluid"
+                src="./imgs/blog-3.jpg"
+                alt="...no image to show"
+              />
+            </div>
+            <span>Jan 17, 2022</span>
+            <p>Some Awesome Blog Title Here</p>
+          </div>
+        </div>
+      </div>
+      <a
+        href="#"
+        class="btn main-btn rounded-pill my-4 m-auto d-block text-uppercase"
+        >more stories</a
+      >
+    </div>
+    <!-- end about5 -->
+    <!-- start contact -->
+    <div id="Contact" class="py-5">
+      <form action="" class="row container m-auto text-center text-md-start">
+        <div class="fw-bold col-lg-3 col-md-6 fs-5 mb-3">
+          Subscribe to our Newsletter:
+        </div>
+        <input
+          type="text"
+          class="col-lg-7 col-md-6 mb-3"
+          placeholder="Enter Your Email Address"
+        />
+        <input
+          type="submit"
+          class="rounded-pill text-capitalize border-0 btn col-lg-2 col-md-6 d-block submit"
+          value="subscribe"
+        />
+      </form>
+    </div>
+    <!-- end contact -->
+    <!-- start footer  -->
+    <footer class="py-5 text-center container-fluid">
+      <div class="row">
+        <div class="col-lg-4 col-sm-6">
+          <div class="image">
+            <img src="./imgs/logo.png" alt="...no image to show" />
+          </div>
+          <p class="my-4">
+            Pellentesque in ipsum id orci porta dapibus. Vivamus magna justo,
+            lacinia eget consectetur sed, convallis at tellus.
+          </p>
+          <div>
+            Created By <span>Graphberry</span>
+            <div>&copy; 2022 - <span>Bondi Inc</span></div>
+          </div>
+        </div>
+        <!-- 2 -->
+        <div class="col-lg-2 col-sm-6">
+          <h5 class="fw-bold">Links</h5>
+          <ul class="list-unstyled">
+            <li class="text-capitalize opacity-50 my-2">home</li>
+            <li class="text-capitalize opacity-50 my-2">our services</li>
+            <li class="text-capitalize opacity-50 my-2">portfolio</li>
+            <li class="text-capitalize opacity-50 my-2">testimonials</li>
+            <li class="text-capitalize opacity-50 my-2">support</li>
+            <li class="text-capitalize opacity-50 my-2">terms and condition</li>
+          </ul>
+        </div>
+        <!-- 3 -->
+        <div class="col-lg-2 col-sm-6">
+          <h5 class="fw-bold">About US</h5>
+          <ul class="list-unstyled">
+            <li class="text-capitalize opacity-50 my-2">sign in</li>
+            <li class="text-capitalize opacity-50 my-2">register</li>
+            <li class="text-capitalize opacity-50 my-2">about us</li>
+            <li class="text-capitalize opacity-50 my-2">blog</li>
+            <li class="text-capitalize opacity-50 my-2">contact us</li>
+            <li class="text-capitalize opacity-50 my-2">terms and condition</li>
+          </ul>
+        </div>
+        <!-- 4 -->
+        <div class="col-lg-4 col-sm-6">
+          <h3 class="">Contact Us</h3>
+          <p class="my-4">
+            Get in touch with us via mail phone.We are waiting for your call or
+            message
+          </p>
+          <a href="#" class="main-btn btn d-block w-100 px-3 rounded-pill mt-5"
+            >graphberry@gmail.com</a
+          >
+          <ul class="Icons">
+            <li class="rounded-circle p-2">
+              <a href="#" class="facebook">
+                <i
+                  class="fa-brands fa-facebook fa-lg facebook rounded-circle p2"
+                ></i
+              ></a>
+            </li>
+            <li class="rounded-circle p-2">
+              <a href="#" class="twitter">
+                <i
+                  class="fa-brands fa-twitter twitter fa-lg rounded-circle p2"
+                ></i
+              ></a>
+            </li>
+            <li class="rounded-circle p-2">
+              <a href="#" class="linkedin">
+                <i
+                  class="fa-brands fa-linkedin fa-lg linkedin rounded-circle p2"
+                ></i
+              ></a>
+            </li>
+            <li class="rounded-circle p-2">
+              <a href="#" class="youtube">
+                <i
+                  class="fa-brands fa-youtube fa-lg youtube rounded-circle p2"
+                ></i
+              ></a>
+            </li>
+            <!-- <div>
+              <i
+                class="fa-brands fa-facebook fa-lg facebook rounded-circle p2"
+              ></i>
+            </div> -->
+          </ul>
+        </div>
+      </div>
+    </footer>
+    <!-- end footer  -->
     <script src="./js/tilt.js"></script>
     <script src="./js/all.min.js"></script>
     <script src="./js/bootstrap.bundle.min.js"></script>

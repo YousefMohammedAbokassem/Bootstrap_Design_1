@@ -14,8 +14,10 @@ const icon = document.getElementById("myClick"),
   option = document.querySelector(".option"),
   show = document.querySelector(".option .show"),
   spans = document.querySelectorAll(".option .colors span"),
+  submit = document.querySelector("input.submit"),
   goUp = document.getElementById("goUp");
 // go up
+submit.preventDefault;
 goUp.addEventListener("click", () => {
   window.scrollTo({
     left: "0px",
@@ -37,6 +39,7 @@ show.addEventListener("click", (e) => {
     show.innerHTML = "show";
   }
 });
+//
 // loacal storage
 let localItem = localStorage.getItem("color1");
 if (localItem !== null) {
@@ -263,9 +266,8 @@ VanillaTilt.init(document.querySelectorAll(".glare"), {
 const media = () => {
   let q = matchMedia("(max-width:768px)");
   if (q.matches) {
-    document.querySelector("body").style.cssText = "background-color:#fff;";
     //
-    // 
+    //
     window.onscroll = function () {
       fromRight.forEach((item) => {
         if (scrollY > item.offsetTop - 800) {
@@ -300,7 +302,7 @@ const media = () => {
       } else {
         goUp.style.cssText = "opacity:0; bottom:42px;";
       }
-      if (scrollY < home.offsetTop - 400) {
+      if (scrollY < home.offsetTop) {
         myLinks.forEach((a) => {
           a.classList.remove("active");
           myLinks[0].classList.add("active");
@@ -339,7 +341,10 @@ const media = () => {
         });
         myPointer.style.cssText = "left:177px;  width:82px;";
         myLargePointer.style.cssText = "left:217px; width:82px;";
-      } else if (scrollY >= about.offsetTop) {
+      } else if (
+        scrollY >= about.offsetTop &&
+        scrollY < contact.offsetTop - 400
+      ) {
         myLinks.forEach((a) => {
           a.classList.remove("active");
           myLinks[3].classList.add("active");
@@ -350,14 +355,25 @@ const media = () => {
         });
         myPointer.style.cssText = "left:275px; width:60px;";
         myLargePointer.style.cssText = "left:332px; width:60px;";
+      } else if (scrollY >= contact.offsetTop - 400) {
+        myLinks.forEach((a) => {
+          a.classList.remove("active");
+          myLinks[4].classList.add("active");
+        });
+        navLis.forEach((li) => {
+          li.classList.remove("padd");
+          navLis[4].classList.add("padd");
+        });
+        myPointer.style.cssText = "left:351px; width:73px;";
+        myLargePointer.style.cssText = "left:424px; width:73px;";
       }
     };
-    console.log("less than");
+
+    // console.log("less than");
     //
   } else {
-    console.log("more than");
+    // console.log("more than");
     window.onscroll = function () {
-
       fromRight.forEach((item) => {
         if (scrollY > item.offsetTop - 400) {
           item.style.cssText = "    left: 0px;opacity: 1;";
@@ -427,7 +443,10 @@ const media = () => {
         });
         myPointer.style.cssText = "left:177px;  width:82px;";
         myLargePointer.style.cssText = "left:217px; width:82px;";
-      } else if (scrollY >= about.offsetTop) {
+      } else if (
+        scrollY >= about.offsetTop &&
+        scrollY < contact.offsetTop - 675
+      ) {
         myLinks.forEach((a) => {
           a.classList.remove("active");
           myLinks[3].classList.add("active");
@@ -438,9 +457,19 @@ const media = () => {
         });
         myPointer.style.cssText = "left:275px; width:60px;";
         myLargePointer.style.cssText = "left:332px; width:60px;";
+      } else if (scrollY >= contact.offsetTop - 675) {
+        myLinks.forEach((a) => {
+          a.classList.remove("active");
+          myLinks[4].classList.add("active");
+        });
+        navLis.forEach((li) => {
+          li.classList.remove("padd");
+          navLis[4].classList.add("padd");
+        });
+        myPointer.style.cssText = "left:351px; width:73px;";
+        myLargePointer.style.cssText = "left:424px; width:73px;";
       }
     };
-    document.querySelector("body").style.cssText = "background-color:blue;";
   }
 };
 onload = media;
