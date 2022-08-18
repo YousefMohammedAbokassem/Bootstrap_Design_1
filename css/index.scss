@@ -3,6 +3,10 @@
   box-sizing: border-box;
   padding: 0px;
   margin: 0px;
+  *::selection {
+    background-color: var(--roundedLink-color);
+    color: var(--linkText-color);
+  }
 }
 ::-webkit-scrollbar {
   width: 10px;
@@ -294,6 +298,7 @@ body {
 // start portfolio
 .portfolio {
   background-color: var(--section-color);
+  overflow: hidden;
   ul {
     li {
       padding: 0.5rem 1rem;

@@ -263,214 +263,112 @@ VanillaTilt.init(document.querySelectorAll(".glare"), {
   "max-glare": 0.25,
 });
 
-const media = () => {
-  let q = matchMedia("(max-width:768px)");
-  if (q.matches) {
-    //
-    //
-    window.onscroll = function () {
-      fromRight.forEach((item) => {
-        if (scrollY > item.offsetTop - 800) {
-          item.style.cssText = "    left: 0px;opacity: 1;";
-        } else {
-          item.style.cssText = "    left: 195px;opacity: 0;";
-        }
-      });
-      fromLeft.forEach((item) => {
-        if (scrollY > item.offsetTop - 800) {
-          item.style.cssText = "    right: 0px;opacity: 1;";
-        } else {
-          item.style.cssText = "    right: 195px;opacity: 0;";
-        }
-      });
-      fromTop.forEach((item) => {
-        if (scrollY > item.offsetTop - 550) {
-          item.style.cssText = "    bottom: 0px;opacity: 1;";
-        } else {
-          item.style.cssText = "    bottom: 195px;opacity: 0;";
-        }
-      });
-      fromBottom.forEach((item) => {
-        if (scrollY > item.offsetTop - 900) {
-          item.style.cssText = "top: 0px;opacity: 1;";
-        } else {
-          item.style.cssText = "top: 100px;opacity: 0;";
-        }
-      });
-      if (window.scrollY > 1000) {
-        goUp.style.cssText = "opacity:1; bottom:62px;";
-      } else {
-        goUp.style.cssText = "opacity:0; bottom:42px;";
-      }
-      if (scrollY < home.offsetTop) {
-        myLinks.forEach((a) => {
-          a.classList.remove("active");
-          myLinks[0].classList.add("active");
-        });
-        navLis.forEach((li) => {
-          li.classList.remove("padd");
-          navLis[0].classList.add("padd");
-        });
-        myPointer.style.cssText = "left:5px; width:59px;";
-        myLargePointer.style.cssText = "left:13px; width:59px;";
-      } else if (
-        scrollY >= services.offsetTop - 400 &&
-        scrollY < portfolio.offsetTop - 400
-      ) {
-        myLinks.forEach((a) => {
-          a.classList.remove("active");
-          myLinks[1].classList.add("active");
-        });
-        navLis.forEach((li) => {
-          li.classList.remove("padd");
-          navLis[1].classList.add("padd");
-        });
-        myPointer.style.cssText = "left:80px;  width:82px;";
-        myLargePointer.style.cssText = "left:103px; width:82px;";
-      } else if (
-        scrollY >= portfolio.offsetTop - 400 &&
-        scrollY < about.offsetTop - 400
-      ) {
-        myLinks.forEach((a) => {
-          a.classList.remove("active");
-          myLinks[2].classList.add("active");
-        });
-        navLis.forEach((li) => {
-          li.classList.remove("padd");
-          navLis[2].classList.add("padd");
-        });
-        myPointer.style.cssText = "left:177px;  width:82px;";
-        myLargePointer.style.cssText = "left:217px; width:82px;";
-      } else if (
-        scrollY >= about.offsetTop &&
-        scrollY < contact.offsetTop - 400
-      ) {
-        myLinks.forEach((a) => {
-          a.classList.remove("active");
-          myLinks[3].classList.add("active");
-        });
-        navLis.forEach((li) => {
-          li.classList.remove("padd");
-          navLis[3].classList.add("padd");
-        });
-        myPointer.style.cssText = "left:275px; width:60px;";
-        myLargePointer.style.cssText = "left:332px; width:60px;";
-      } else if (scrollY >= contact.offsetTop - 400) {
-        myLinks.forEach((a) => {
-          a.classList.remove("active");
-          myLinks[4].classList.add("active");
-        });
-        navLis.forEach((li) => {
-          li.classList.remove("padd");
-          navLis[4].classList.add("padd");
-        });
-        myPointer.style.cssText = "left:351px; width:73px;";
-        myLargePointer.style.cssText = "left:424px; width:73px;";
-      }
-    };
-
-    // console.log("less than");
-    //
+// console.log("more than");
+window.onscroll = function () {
+  fromRight.forEach((item) => {
+    if (scrollY > item.offsetTop + item.offsetHeight - window.innerHeight) {
+      item.style.cssText = "    left: 0px;opacity: 1;";
+    } else {
+      item.style.cssText = "    left: 195px;opacity: 0;";
+    }
+  });
+  fromLeft.forEach((item) => {
+    if (scrollY > item.offsetTop + item.offsetHeight - window.innerHeight) {
+      item.style.cssText = "    right: 0px;opacity: 1;";
+    } else {
+      item.style.cssText = "    right: 195px;opacity: 0;";
+    }
+  });
+  fromTop.forEach((item) => {
+    if (scrollY > item.offsetTop + item.offsetHeight - window.innerHeight) {
+      item.style.cssText = "    bottom: 0px;opacity: 1;";
+    } else {
+      item.style.cssText = "    bottom: 195px;opacity: 0;";
+    }
+  });
+  fromBottom.forEach((item) => {
+    if (scrollY > item.offsetTop + item.offsetHeight - window.innerHeight) {
+      item.style.cssText = "top: 0px;opacity: 1;";
+    } else {
+      item.style.cssText = "top: 100px;opacity: 0;";
+    }
+  });
+  if (window.scrollY > 200) {
+    goUp.style.cssText = "opacity:1; bottom:62px;";
   } else {
-    // console.log("more than");
-    window.onscroll = function () {
-      fromRight.forEach((item) => {
-        if (scrollY > item.offsetTop - 400) {
-          item.style.cssText = "    left: 0px;opacity: 1;";
-        } else {
-          item.style.cssText = "    left: 195px;opacity: 0;";
-        }
-      });
-      fromLeft.forEach((item) => {
-        if (scrollY > item.offsetTop - 400) {
-          item.style.cssText = "    right: 0px;opacity: 1;";
-        } else {
-          item.style.cssText = "    right: 195px;opacity: 0;";
-        }
-      });
-      fromTop.forEach((item) => {
-        if (scrollY > item.offsetTop - 150) {
-          item.style.cssText = "    bottom: 0px;opacity: 1;";
-        } else {
-          item.style.cssText = "    bottom: 195px;opacity: 0;";
-        }
-      });
-      fromBottom.forEach((item) => {
-        if (scrollY > item.offsetTop - 500) {
-          item.style.cssText = "top: 0px;opacity: 1;";
-        } else {
-          item.style.cssText = "top: 100px;opacity: 0;";
-        }
-      });
-      if (window.scrollY > 200) {
-        goUp.style.cssText = "opacity:1; bottom:62px;";
-      } else {
-        goUp.style.cssText = "opacity:0; bottom:42px;";
-      }
-      if (scrollY < home.offsetTop) {
-        myLinks.forEach((a) => {
-          a.classList.remove("active");
-          myLinks[0].classList.add("active");
-        });
-        navLis.forEach((li) => {
-          li.classList.remove("padd");
-          navLis[0].classList.add("padd");
-        });
-        myPointer.style.cssText = "left:5px; width:59px;";
-        myLargePointer.style.cssText = "left:13px; width:59px;";
-      } else if (
-        scrollY >= services.offsetTop &&
-        scrollY < portfolio.offsetTop
-      ) {
-        myLinks.forEach((a) => {
-          a.classList.remove("active");
-          myLinks[1].classList.add("active");
-        });
-        navLis.forEach((li) => {
-          li.classList.remove("padd");
-          navLis[1].classList.add("padd");
-        });
-        myPointer.style.cssText = "left:80px;  width:82px;";
-        myLargePointer.style.cssText = "left:103px; width:82px;";
-      } else if (scrollY >= portfolio.offsetTop && scrollY < about.offsetTop) {
-        myLinks.forEach((a) => {
-          a.classList.remove("active");
-          myLinks[2].classList.add("active");
-        });
-        navLis.forEach((li) => {
-          li.classList.remove("padd");
-          navLis[2].classList.add("padd");
-        });
-        myPointer.style.cssText = "left:177px;  width:82px;";
-        myLargePointer.style.cssText = "left:217px; width:82px;";
-      } else if (
-        scrollY >= about.offsetTop &&
-        scrollY < contact.offsetTop - 675
-      ) {
-        myLinks.forEach((a) => {
-          a.classList.remove("active");
-          myLinks[3].classList.add("active");
-        });
-        navLis.forEach((li) => {
-          li.classList.remove("padd");
-          navLis[3].classList.add("padd");
-        });
-        myPointer.style.cssText = "left:275px; width:60px;";
-        myLargePointer.style.cssText = "left:332px; width:60px;";
-      } else if (scrollY >= contact.offsetTop - 675) {
-        myLinks.forEach((a) => {
-          a.classList.remove("active");
-          myLinks[4].classList.add("active");
-        });
-        navLis.forEach((li) => {
-          li.classList.remove("padd");
-          navLis[4].classList.add("padd");
-        });
-        myPointer.style.cssText = "left:351px; width:73px;";
-        myLargePointer.style.cssText = "left:424px; width:73px;";
-      }
-    };
+    goUp.style.cssText = "opacity:0; bottom:42px;";
+  }
+  if (scrollY < home.offsetTop + home.offsetHeight - window.innerHeight) {
+    myLinks.forEach((a) => {
+      a.classList.remove("active");
+      myLinks[0].classList.add("active");
+    });
+    navLis.forEach((li) => {
+      li.classList.remove("padd");
+      navLis[0].classList.add("padd");
+    });
+    myPointer.style.cssText = "left:5px; width:59px;";
+    myLargePointer.style.cssText = "left:13px; width:59px;";
+  } else if (
+    scrollY >=
+      services.offsetTop + services.offsetHeight - services.innerHeight &&
+    scrollY < portfolio.offsetTop + portfolio.offsetHeight - window.innerHeight
+  ) {
+    myLinks.forEach((a) => {
+      a.classList.remove("active");
+      myLinks[1].classList.add("active");
+    });
+    navLis.forEach((li) => {
+      li.classList.remove("padd");
+      navLis[1].classList.add("padd");
+    });
+    myPointer.style.cssText = "left:80px;  width:82px;";
+    myLargePointer.style.cssText = "left:103px; width:82px;";
+  } else if (
+    scrollY >=
+      portfolio.offsetTop + portfolio.offsetHeight - window.innerHeight &&
+    scrollY < about.offsetTop + about.offsetHeight - window.innerHeight
+  ) {
+    myLinks.forEach((a) => {
+      a.classList.remove("active");
+      myLinks[2].classList.add("active");
+    });
+    navLis.forEach((li) => {
+      li.classList.remove("padd");
+      navLis[2].classList.add("padd");
+    });
+    myPointer.style.cssText = "left:177px;  width:82px;";
+    myLargePointer.style.cssText = "left:217px; width:82px;";
+  } else if (
+    scrollY >= about.offsetTop + about.offsetHeight - window.innerHeight &&
+    scrollY < contact.offsetTop + contact.offsetHeight - window.innerHeight
+  ) {
+    myLinks.forEach((a) => {
+      a.classList.remove("active");
+      myLinks[3].classList.add("active");
+    });
+    navLis.forEach((li) => {
+      li.classList.remove("padd");
+      navLis[3].classList.add("padd");
+    });
+    myPointer.style.cssText = "left:275px; width:60px;";
+    myLargePointer.style.cssText = "left:332px; width:60px;";
+  } else if (
+    scrollY >=
+    about.offsetTop + about.offsetHeight - window.innerHeight
+  ) {
+    myLinks.forEach((a) => {
+      a.classList.remove("active");
+      myLinks[4].classList.add("active");
+    });
+    navLis.forEach((li) => {
+      li.classList.remove("padd");
+      navLis[4].classList.add("padd");
+    });
+    myPointer.style.cssText = "left:351px; width:73px;";
+    myLargePointer.style.cssText = "left:424px; width:73px;";
   }
 };
+
 onload = media;
 onresize = media;
