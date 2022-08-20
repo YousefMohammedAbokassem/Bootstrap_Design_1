@@ -162,6 +162,7 @@ navLis.forEach((li) => {
     navLis.forEach((item) => {
       item.classList.remove("padd");
     });
+    icon.click();
     li.classList.add("padd");
   });
 });
@@ -178,7 +179,37 @@ myLinks.forEach((link) => {
 // end Nav
 // start portfolio
 const lis = document.querySelectorAll(".portfolio ul li"),
-  images = document.querySelectorAll(".portfolio .all");
+  images = document.querySelectorAll(".portfolio .all"),
+  imgs = document.querySelectorAll(".portfolio .all img");
+// overLay = document.querySelectorAll(".overLay");
+
+imgs.forEach((img) => {
+  // console.log(img);
+  img.addEventListener("click", (e) => {
+    // console.log(img);
+    // overlay//
+    let over = document.createElement("div");
+    over.className = "overLay";
+    document.body.prepend(over);
+    //  popup
+    let popup = document.createElement("img");
+    console.log(e.target.src);
+    popup.setAttribute("src", e.target.src);
+
+    popup.className = "imgOver";
+    over.prepend(popup);
+    //
+    let span = document.createElement("span");
+    let text = document.createTextNode("X");
+    span.style.cssText =
+      "position: absolute;z-index: 5002;   background: #111;  color: white; left: 82%; top: 22%;padding: 10px;border-radius: 50%; cursor:pointer;";
+    span.appendChild(text);
+    over.prepend(span);
+    span.addEventListener("click", () => {
+      over.remove();
+    });
+  });
+});
 lis.forEach((li) => {
   li.addEventListener("click", (element) => {
     lis.forEach((li) => {
@@ -311,7 +342,7 @@ window.onscroll = function () {
     myLargePointer.style.cssText = "left:13px; width:59px;";
   } else if (
     scrollY >=
-      services.offsetTop + services.offsetHeight - services.innerHeight &&
+      services.offsetTop + services.offsetHeight - window.innerHeight &&
     scrollY < portfolio.offsetTop + portfolio.offsetHeight - window.innerHeight
   ) {
     myLinks.forEach((a) => {
@@ -370,5 +401,6 @@ window.onscroll = function () {
   }
 };
 
-onload = media;
-onresize = media;
+// onload = media;
+// onresize = media;
+//
