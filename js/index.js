@@ -202,9 +202,9 @@ imgs.forEach((img) => {
     let span = document.createElement("span");
     let text = document.createTextNode("X");
     span.style.cssText =
-      "position: absolute;z-index: 5002;   background: #111;  color: white; left: 82%; top: 22%;padding: 10px;border-radius: 50%; cursor:pointer;";
+      "position: absolute;z-index: 5002;   background: #111;  color: white; left: 50%; top: 20%;padding: 10px;border-radius: 50%; cursor:pointer;";
     span.appendChild(text);
-    over.prepend(span);
+    over.append(span);
     span.addEventListener("click", () => {
       over.remove();
     });
