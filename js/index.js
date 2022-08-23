@@ -41,35 +41,36 @@ show.addEventListener("click", (e) => {
 });
 //
 // loacal storage
-let localItem = localStorage.getItem("color1");
+let localItem = localStorage.getItem("ccolor1");
+console.log(localItem);
 if (localItem !== null) {
   document.documentElement.style.setProperty(
     "--dark-color",
-    localStorage.getItem("color1")
+    localStorage.getItem("ccolor1")
   );
   document.documentElement.style.setProperty(
     "--icons-color",
-    localStorage.getItem("color2")
+    localStorage.getItem("ccolor2")
   );
   document.documentElement.style.setProperty(
     "--roundedLink-color",
-    localStorage.getItem("color3")
+    localStorage.getItem("ccolor3")
   );
   document.documentElement.style.setProperty(
     "--linkText-color",
-    localStorage.getItem("color4")
+    localStorage.getItem("ccolor4")
   );
   document.documentElement.style.setProperty(
     "--section-color",
-    localStorage.getItem("color5")
+    localStorage.getItem("ccolor5")
   );
   document.documentElement.style.setProperty(
     "--theme-text",
-    localStorage.getItem("color6")
+    localStorage.getItem("ccolor6")
   );
   document.documentElement.style.setProperty(
     "--mix-section",
-    localStorage.getItem("color7")
+    localStorage.getItem("ccolor7")
   );
 }
 spans.forEach((span) => {
@@ -78,43 +79,48 @@ spans.forEach((span) => {
       span.classList.remove("spanActive");
     });
     // set item
-    localStorage.setItem("color1", e.target.dataset.color1);
-    localStorage.setItem("color2", e.target.dataset.color2);
-    localStorage.setItem("color3", e.target.dataset.color3);
-    localStorage.setItem("color4", e.target.dataset.color4);
-    localStorage.setItem("color5", e.target.dataset.color5);
-    localStorage.setItem("color6", e.target.dataset.color6);
-    localStorage.setItem("color7", e.target.dataset.color7);
+    console.log(e.target.dataset.ccolor1);
+    console.log(e.target.dataset.ccolor2);
+    console.log(e.target.dataset.ccolor3);
+    console.log(e.target.dataset.ccolor4);
+    console.log(e.target.dataset.ccolor5);
+    localStorage.setItem("ccolor2", e.target.dataset.ccolor2);
+    localStorage.setItem("ccolor1", e.target.dataset.ccolor1);
+    localStorage.setItem("ccolor3", e.target.dataset.ccolor3);
+    localStorage.setItem("ccolor4", e.target.dataset.ccolor4);
+    localStorage.setItem("ccolor5", e.target.dataset.ccolor5);
+    localStorage.setItem("ccolor6", e.target.dataset.ccolor6);
+    localStorage.setItem("ccolor7", e.target.dataset.ccolor7);
     // set item
     e.target.classList.add("spanActive");
     //
     document.documentElement.style.setProperty(
       "--dark-color",
-      e.target.dataset.color1
+      e.target.dataset.ccolor1
     );
     document.documentElement.style.setProperty(
       "--icons-color",
-      e.target.dataset.color2
+      e.target.dataset.ccolor2
     );
     document.documentElement.style.setProperty(
       "--roundedLink-color",
-      e.target.dataset.color3
+      e.target.dataset.ccolor3
     );
     document.documentElement.style.setProperty(
       "--linkText-color",
-      e.target.dataset.color4
+      e.target.dataset.ccolor4
     );
     document.documentElement.style.setProperty(
       "--section-color",
-      e.target.dataset.color5
+      e.target.dataset.ccolor5
     );
     document.documentElement.style.setProperty(
       "--theme-text",
-      e.target.dataset.color6
+      e.target.dataset.ccolor6
     );
     document.documentElement.style.setProperty(
       "--mix-section",
-      e.target.dataset.color7
+      e.target.dataset.ccolor7
     );
   });
 });
