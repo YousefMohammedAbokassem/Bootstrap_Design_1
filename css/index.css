@@ -75,22 +75,95 @@ body .imgOver::before {
   border-radius: 50%;
   cursor: pointer;
 }
-body .overLay {
-  width: 100%;
-  height: 100%;
+
+.boxOver {
   position: fixed;
-  left: 0;
-  top: 0;
-  z-index: 5000;
-}
-body .overLay::before {
-  content: "";
-  position: absolute;
   left: 0px;
   top: 0px;
-  width: 100%;
   height: 100%;
-  background-color: rgba(0, 0, 0, 0.7);
+  width: 100%;
+  z-index: 100001;
+}
+.boxOver .overLay {
+  height: 100%;
+  width: 100%;
+  background-color: rgba(17, 17, 17, 0.2392156863);
+  z-index: 100002;
+}
+.boxOver .imageBox {
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+  width: 500px;
+  height: 500px;
+  border: 10px solid transparent;
+  border-radius: 87px;
+  overflow: hidden;
+  box-shadow: 0 0 20px #eee;
+}
+@media (max-width:767px) {
+  .boxOver .imageBox {
+    width: 90%;
+    height: 250px;
+  }
+}
+.boxOver .imageBox img {
+  max-width: 100%;
+  height: 100%;
+  max-height: 100%;
+}
+.boxOver .imageBox span {
+  color: white;
+  background: black;
+  position: absolute;
+  left: 61px;
+  top: 2px;
+  -webkit-user-select: none;
+     -moz-user-select: none;
+      -ms-user-select: none;
+          user-select: none;
+  font-weight: bold;
+  padding: 7px;
+  border-radius: 50%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  cursor: pointer;
+}
+.boxOver .imageBox span::before {
+  content: "close the image";
+  position: absolute;
+  opacity: 0;
+  left: -2px;
+  width: 132px;
+  bottom: -38px;
+  background-color: black;
+  color: #fff;
+  padding: 0px 5px;
+  transition: 0.5s;
+}
+.boxOver .imageBox span::after {
+  content: "";
+  position: absolute;
+  opacity: 0;
+  width: 0;
+  height: 0;
+  border: 14px solid transparent;
+  left: -2px;
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+  transition: 0.5s;
+  top: 65%;
+  transition: 0.5s;
+  border-color: transparent transparent #b6b6b6 transparent;
+}
+.boxOver .imageBox span:hover::after {
+  opacity: 1;
+}
+.boxOver .imageBox span:hover::before {
+  opacity: 1;
 }
 
 .main-btn {

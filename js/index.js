@@ -189,30 +189,64 @@ const lis = document.querySelectorAll(".portfolio ul li"),
   imgs = document.querySelectorAll(".portfolio .all img");
 // overLay = document.querySelectorAll(".overLay");
 
-imgs.forEach((img) => {
-  // console.log(img);
-  img.addEventListener("click", (e) => {
-    // console.log(img);
-    // overlay//
-    let over = document.createElement("div");
-    over.className = "overLay";
-    document.body.prepend(over);
-    //  popup
-    let popup = document.createElement("img");
-    console.log(e.target.src);
-    popup.setAttribute("src", e.target.src);
+// imgs.forEach((img) => {
+//   // console.log(img);
+//   img.addEventListener("click", (e) => {
+//     // console.log(img);
+//     // overlay//
+//     let over = document.createElement("div");
+//     over.className = "overLay";
+//     document.body.prepend(over);
+//     //  popup
+//     let popup = document.createElement("img");
+//     console.log(e.target.src);
+//     popup.setAttribute("src", e.target.src);
 
-    popup.className = "imgOver";
-    over.prepend(popup);
+//     popup.className = "imgOver";
+//     over.prepend(popup);
+//     //
+//     let span = document.createElement("span");
+//     let text = document.createTextNode("X");
+//     span.style.cssText =
+//       "position: absolute;z-index: 5002;   background: #111;  color: white; left: 50%; top: 20%;padding: 10px;border-radius: 50%; cursor:pointer;";
+//     span.appendChild(text);
+//     over.append(span);
+//     span.addEventListener("click", () => {
+//       over.remove();
+//     });
+//   });
+// });
+imgs.forEach((image) => {
+  image.addEventListener("click", (e) => {
+    // console.log(e.target)
+    // make box
+    let div = document.createElement("div");
+    div.classList = "boxOver";
+    // make over
+    let over = document.createElement("div");
+    over.classList = "overLay";
+    div.appendChild(over);
     //
+    let imageBox = document.createElement("div");
+    imageBox.classList = "imageBox";
+    let image = document.createElement("img");
+    image.setAttribute("src", e.target.src);
     let span = document.createElement("span");
-    let text = document.createTextNode("X");
-    span.style.cssText =
-      "position: absolute;z-index: 5002;   background: #111;  color: white; left: 50%; top: 20%;padding: 10px;border-radius: 50%; cursor:pointer;";
-    span.appendChild(text);
-    over.append(span);
-    span.addEventListener("click", () => {
-      over.remove();
+    let spanText = document.createTextNode("X");
+    // span.title = "close the image";
+    span.appendChild(spanText);
+    imageBox.appendChild(image);
+    imageBox.appendChild(span);
+    div.appendChild(imageBox);
+
+    span.addEventListener("click", (e) => {
+      div.remove();
+    });
+    //
+    document.body.prepend(div);
+    document.body.style.overflow = "hidden";
+    span.addEventListener("click", (e) => {
+      document.body.style.overflow = "auto";
     });
   });
 });
